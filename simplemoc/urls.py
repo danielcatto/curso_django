@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -8,8 +9,10 @@ from django.conf.urls.static import static
 admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^', include('simplemoc.core.urls', namespace='core')),
-    url(r'cursos/', include('simplemoc.courses.urls', namespace='courses')),
+    url(r'^conta/', include('simplemoc.accounts.urls', namespace='accounts')),
+    url(r'^cursos/', include('simplemoc.courses.urls', namespace='courses')),
     url(r'^admin/', include(admin.site.urls)),
+
 )
 
 if settings.DEBUG:
