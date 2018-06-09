@@ -1,0 +1,35 @@
+rodar servidor:
+    python manage.py runserver
+crirar um projeto:
+
+criando uma aplicação:
+    python manage.py startapp blog
+
+
+
+#no shell
+#este código é realizado no shell do django para realizaar teste de manipulação de banco de dados com o models da class courses.Course
+
+from simplemoc.courses.models import Course
+curso = Course()#ou curso = Course(curso.name = 'python com django', curso.description = 'curso de python com django e tall')
+curso.name = 'python com django'
+curso.description = 'curso de python com django e tall'
+ curso.slug = 'django'
+curso.save()
+
+
+cur = Course.objects.all()
+for curso in cur:
+    print(curso)
+ou
+cur[0].name
+
+
+
+cur = Course.objects.filter(slug='django')
+cur[0].name
+#aninhado
+cur = Course.objects.filter(slug='django').filter(name='python')
+#verifica se contem uma palavra no campo
+cur = Course.objects.filter(name__icontains='django')  #campo com ação diferenciada com dois anderlines usando icontains
+cur # retorna o objeto com quantidade de resposta do banco
