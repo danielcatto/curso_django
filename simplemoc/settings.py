@@ -117,3 +117,9 @@ EMAIL_HOST_PASSWORD  = 'senha'
 EMAIL_PORT = 587
 
 CONTACT_EMAIL = 'contato@simplemoc.com'
+
+
+#Auth - funciona automaticamente usando o
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'core:home'
+LOGOUT_URL =''
